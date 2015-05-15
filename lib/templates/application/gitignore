@@ -1,3 +1,6 @@
-*.log
 node_modules
-app/bower_components
+wordpress
+.DS_Store
+app/lib
+server.log
+npm-debug.log

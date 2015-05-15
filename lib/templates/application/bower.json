@@ -6,7 +6,10 @@
     "flight": "1.x.x",
     "requirejs": "~2.1.5"<% if (normalize) { %>,
     "normalize-css": "3.x.x"<% } %><% if (bootstrap) { %>,
-    "components-bootstrap": "3.x.x"<% } %>
+    "components-bootstrap": "3.x.x"<% } %>,
+    "requirejs-text": "^2.0.0",
+    "jsx-requirejs-plugin": "^0.6.0",
+    "router": "https://github.com/flatiron/director.git"
   },
   "devDependencies": {
     "jasmine-flight": "3.x.x"
