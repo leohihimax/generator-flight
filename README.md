@@ -6,9 +6,12 @@ A [Yeoman](http://yeoman.io/) generator for
 [Flight](http://flightjs.github.io/), Twitter's client-side JavaScript
 framework. Get up and running with everything you need to create an
 application.
-
-NOTE: A separate [Flight package generator](https://github.com/flightjs/generator-flight-package)
+A separate [Flight package generator](https://github.com/flightjs/generator-flight-package)
 is available for creating standalone Flight components.
+
+NOTE: This project is forked from from [flight/generator-flight](https://github.com/flightjs/generator-flight). It is modified for the usage of project [unitedstackfront/ued](https://github.com/unitedstackfront/ued).
+
+
 
 
 ## Recommended setup
@@ -32,6 +35,21 @@ mkdir flight-app && cd $_
 ```
 
 You're now ready to generate an app!
+
+## Usage for [unitedstackfront/ued](https://github.com/unitedstackfront/ued)
+
+First Create a globally-installed symbolic link from this project.
+
+```
+npm link
+```
+
+Next, in some other location(like the unitedstackfront/ued work-directory), create a 
+symlink from the local node_modules folder to the global symlink.
+
+```
+npm link generator-flight
+```
 
 
 ## Main generator
@@ -73,17 +91,23 @@ Produces:
 ```
 .
 ├── app
-│   ├── bower_components
-│   │   ├── es5-shim
-│   │   ├── flight
-│   │   ├── jasmine-flight
-│   │   ├── jquery
-│   │   └── requirejs
 │   ├── css
 │   │   └── main.css
-│   ├── img
+│   ├── lib
+│   │   ├── flight
+│   │   ├── jasmine
+│   │   ├── jasmine-flight
+│   │   ├── jquery
+│   │   ├── jsx-requirejs-plugin
+│   │   ├── react
+│   │   ├── requirejs
+│   │   ├── requirejs-test
+│   │   └── router
 │   ├── js
 │   │   ├── component
+|   |   ├── mixin
+|   |   ├── service
+|   |   ├── templates
 │   │   ├── page
 │   │   │   └── default.js
 │   │   └── main.js
@@ -175,7 +199,7 @@ describeComponent('component/tweet_box', function () {
 
 ### flight:mixin
 
-Generates a mixin component in `app/js/component`.
+Generates a mixin component in `app/js/mixin`.
 
 Example:
 
@@ -183,23 +207,23 @@ Example:
 yo flight:mixin tweet_actions
 ```
 
-Produces `app/js/component/with_tweet_actions.js`:
+Produces `app/js/mixin/tweet_actions.js`:
 
 ```js
 define(function (require) {
-  return withTweetActions;
+  return TweetActions;
 
-  function withTweetActions() {
+  function TweetActions() {
     this.attributes({});
     this.after('initialize', function () {});
   }
 });
 ```
 
-And the test file `test/spec/component/with_tweet_box.spec.js`:
+And the test file `test/spec/mixin/tweet_box.spec.js`:
 
 ```js
-describeMixin('component/with_tweet_box', function () {
+describeMixin('mixin/tweet_box', function () {
   // Initialize the component and attach it to the DOM
   beforeEach(function () {
     this.setupComponent();
