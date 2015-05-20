@@ -1,8 +1,8 @@
 {
   "name": "generator-flight",
-  "version": "0.8.0",
-  "description": "Generator for scaffolding out a Flight web app",
-  "author": "Twitter Inc",
+  "version": "0.0.1",
+  "description": "Generator for scaffolding out a Flight web app for UnitedStack UED",
+  "author": "Jiajun Ma",
   "main": "lib/generators/app/index.js",
   "files": [
     "lib"
@@ -23,11 +23,11 @@
     "node": ">=0.10.0",
     "npm": ">=1.4.0"
   },
-  "homepage": "https://github.com/flightjs/generator-flight",
-  "bugs": "https://github.com/flightjs/generator-flight/issues",
+  "homepage": "https://github.com/leohihimax/generator-flight",
+  "bugs": "https://github.com/leohihimax/generator-flight/issues",
   "repository": {
     "type": "git",
-    "url": "git://github.com/flightjs/generator-flight.git"
+    "url": "git@github.com:leohihimax/generator-flight.git"
   },
   "license": "MIT",
   "keywords": [
@@ -36,6 +36,7 @@
     "framework",
     "generator",
     "web",
-    "yeoman-generator"
+    "yeoman-generator",
+    "UnitedStack"
   ]
 }
